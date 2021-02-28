@@ -1,0 +1,72 @@
+/*
+* Функция перевода пиксилей в реммы
+*/
+@function rem($size) {
+  @return $size / $minimum-size * 1rem;
+}
+
+/*
+* Миксин адаптивного шрифта
+*/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($mobile-vw, $min-vw, $max-vw, $mobile-font-size, $min-font-size, $max-font-size) {
+  $u1: unit($mobile-vw);
+  $u2: unit($min-vw);
+  $u3: unit($max-vw);
+  $u4: unit($mobile-font-size);
+  $u5: unit($min-font-size);
+  $u6: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 and $u1 == $u5 and $u1 == $u6 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+      @media (max-width: $mobile-vw) {
+        font-size: $mobile-font-size;
+      }
+    }
+  }
+}
+
+/*
+* Миксин адаптивного чего угодна)
+*/
+@mixin fluid-property($property, $mobile-vw, $min-vw, $max-vw, $mobile-value, $min-value, $max-value) {
+  $u1: unit($mobile-vw);
+  $u2: unit($min-vw);
+  $u3: unit($max-vw);
+  $u4: unit($mobile-value);
+  $u5: unit($min-value);
+  $u6: unit($max-value);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 and $u1 == $u5 and $u1 == $u6 {
+    & {
+      #{$property}: $min-value;
+      @media screen and (min-width: $min-vw) {
+        #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$property}: $max-value;
+      }
+      @media (max-width: $mobile-vw) {
+        #{$property}: $mobile-value;
+      }
+    }
+  } @else {
+    @warn "All params in `fluid-param` must have one unit";
+    @warn $u1;
+    @warn $u2;
+    @warn $u3;
+    @warn $u4;
+    @warn $u5;
+    @warn $u6;
+  }
+}

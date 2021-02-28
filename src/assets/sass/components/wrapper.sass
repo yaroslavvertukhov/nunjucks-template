@@ -1,0 +1,25 @@
+@import "../variables/variables"
+@import "../mixins/fluid-mixin"
+@import "../mixins/mq"
+
+.wrapper
+  display: flex
+  flex-direction: column
+  width: 100%
+  min-height: 100vh
+
+  @media print
+    display: block
+
+.page
+  flex: 1 1 auto
+
+.container-item
+  padding: rem(16px)
+  position: relative
+  background-color: white
+  border-radius: 6px
+  @include mq($from: tablet)
+    padding: rem(40px)
+  &:not(:first-child)
+    margin-top: rem(24px)

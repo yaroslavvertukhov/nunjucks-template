@@ -1,0 +1,79 @@
+{
+  "name": "pug-template",
+  "version": "1.0.0",
+  "description": "markup",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaroslavvertukhov/pug-template"
+  },
+  "author": "mrtime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaroslavvertukhov/pug-template/issues"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "safari 8",
+    "ie 11"
+  ],
+  "homepage": "https://github.com/yaroslavvertukhov/pug-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^9.7.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.5.3",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-import-resolver-webpack": "^0.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-vue": "^7.4.1",
+    "file-loader": "^5.1.0",
+    "html-beautify-webpack-plugin": "^1.0.5",
+    "html-webpack-plugin": "^3.2.0",
+    "import-glob-loader": "^1.1.0",
+    "jquery": "^3.4.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^8.0.2",
+    "shx": "^0.3.2",
+    "style-loader": "^1.2.1",
+    "svg-sprite-loader": "^4.2.1",
+    "svgo": "^1.3.2",
+    "svgo-loader": "^2.2.1",
+    "webkit-line-clamp": "1.2.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@stomp/stompjs": "^6.0.0",
+    "axios": "^0.20.0",
+    "core-js": "^3.6.5",
+    "dotenv-webpack": "^4.0.0",
+    "js-cookie": "^2.2.1",
+    "object-fit-images": "3.2.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-mq": "^5.0.1",
+    "sockjs": "^0.3.21",
+    "sockjs-client": "^1.5.0",
+    "svg4everybody": "2.1.9",
+    "vee-validate": "^3.4.3",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.3",
+    "vue-router": "^3.4.9",
+    "vue-template-compiler": "^2.6.12",
+    "vuex": "^3.5.1"
+  }
+}

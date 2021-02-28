@@ -1,0 +1,68 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+.container {
+	width: 100%;
+	padding: 0 100px;
+	margin: 0 auto;
+}
+.page-list {
+	width: 100%;
+}
+.page-list-header {
+	padding: 15px 25px;
+	border-bottom: 3px solid grey;
+}
+.page-list-item {
+	padding: 15px 25px;
+	border-bottom: 1px solid grey;
+}
+
+.page-list-link-title,
+.page-list-link-box {
+	width: 80%;
+}
+.page-list-progress {
+	width: 20%;
+}
+.page-list-progress-item {
+	width: 50%;
+}
+.page-list-progress-title {
+	width: 10%;
+}
+.page-list-item,
+.page-list-progress,
+.page-list-header {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.page-list-progress-title,
+.page-list-progress-item {
+	text-align: center;
+}
+.page-list-header {
+	font-weight: bold;
+}
+.page-list-progress-item {
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.page-list-title {
+	font-size: 20px;
+	line-height: 20px;
+	padding: 15px 25px;
+	margin-top: 25px;
+}

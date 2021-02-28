@@ -1,0 +1,10 @@
+mixin breadCrumbs(arr)
+    .bread-crumbs
+        .container
+            span
+                each val, index in arr
+                    if index < arr.length - 1
+                        a(href="#") #{val}
+                        span.bread-crumbs__separator •
+                    else
+                        span #{val}
