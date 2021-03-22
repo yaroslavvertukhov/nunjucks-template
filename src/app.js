@@ -1,3 +1,5 @@
+import "regenerator-runtime/runtime.js";
+
 // sass
 import './assets/sass/index.sass';
 
