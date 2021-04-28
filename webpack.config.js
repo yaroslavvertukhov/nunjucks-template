@@ -126,7 +126,9 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      extensions: ['js', 'vue'],
+    }),
     ...pages.map(
       (page) => new HtmlWebpackPlugin({
         template: `${pagesDir}/${page}`,

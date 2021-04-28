@@ -41,6 +41,8 @@ module.exports = {
       default: 'longform',
       named: 'longform',
     }],
+    'vue/component-definition-name-casing': ['error', 'kebab-case'],
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'prefer-destructuring': 'off',

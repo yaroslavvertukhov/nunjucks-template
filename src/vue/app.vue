@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import api from "@/helpers/api";
+import api from '@/helpers/api';
 import testComponent from './components/test-component';
 
 export default {
-  name: 'App',
+  name: 'app',
   mixins: [api],
   components: {
     testComponent,

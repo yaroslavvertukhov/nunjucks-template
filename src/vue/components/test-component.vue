@@ -4,7 +4,7 @@
       Тестовый компонент вывода юзеров vue
     </div>
     <div class="blocks">
-      <div v-for="item in items" class="blocks__item">
+      <div v-for="item in items" :key="item.name" class="blocks__item">
         {{item.name}}
       </div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'testComponent',
+  name: 'test-component',
   props: {
     items: {
       type: Array,
