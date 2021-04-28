@@ -11,6 +11,7 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const Dotenv = require('dotenv-webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -125,6 +126,7 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
+    new ESLintPlugin(),
     ...pages.map(
       (page) => new HtmlWebpackPlugin({
         template: `${pagesDir}/${page}`,
@@ -171,6 +173,10 @@ module.exports = {
         { from: /\/personal/, to: '/personal.html' },
         // { from: /\/personal\/[A-Za-z0-9\-\/]+/, to: '/personal.html' },
       ],
+    },
+    overlay: {
+      warnings: false,
+      errors: true,
     },
   },
 };

@@ -44,7 +44,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'prefer-destructuring': 'off',
-    'no-return-assign': 'off',
     'linebreak-style': ['error', 'unix'],
     camelcase: 'warn',
   },

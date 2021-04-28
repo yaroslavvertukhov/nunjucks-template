@@ -1,1 +1,1 @@
-import './modules/test-module'
+import './modules/test-module';
