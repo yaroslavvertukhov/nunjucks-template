@@ -20,7 +20,9 @@ const PATHS = {
 
 const pagesDir = `${PATHS.src}/pug/pages/`;
 
-const pages = fs.readdirSync(pagesDir).filter((fileName) => fileName.endsWith('.pug'));
+const pages = fs
+  .readdirSync(pagesDir)
+  .filter((fileName) => fileName.endsWith('.pug'));
 module.exports = {
   externals: {
     paths: PATHS,
@@ -94,7 +96,10 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: './configs/postcss.config.js' } },
+            options: {
+              sourceMap: true,
+              config: { path: './configs/postcss.config.js' },
+            },
           },
           {
             loader: 'sass-loader',
@@ -130,12 +135,13 @@ module.exports = {
       extensions: ['js', 'vue'],
     }),
     ...pages.map(
-      (page) => new HtmlWebpackPlugin({
-        template: `${pagesDir}/${page}`,
-        filename: `./${page.replace(/\.pug/, '.html')}`,
-        minify: false,
-        env: process.env,
-      }),
+      (page) =>
+        new HtmlWebpackPlugin({
+          template: `${pagesDir}/${page}`,
+          filename: `./${page.replace(/\.pug/, '.html')}`,
+          minify: false,
+          env: process.env,
+        })
     ),
     new HtmlBeautifyPlugin({
       config: {

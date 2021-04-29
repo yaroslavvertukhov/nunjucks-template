@@ -7,7 +7,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['airbnb-base', 'plugin:vue/recommended'],
+  extends: ['airbnb-base', 'plugin:vue/recommended', 'prettier'],
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 2019,
@@ -16,7 +16,7 @@ module.exports = {
       jsx: false,
     },
   },
-  plugins: ['vue'],
+  plugins: ['vue', 'prettier'],
   globals: {
     path: true,
     axios: true,
@@ -36,11 +36,14 @@ module.exports = {
     },
   },
   rules: {
-    'vue/v-slot-style': ['error', {
-      atComponent: 'longform',
-      default: 'longform',
-      named: 'longform',
-    }],
+    'vue/v-slot-style': [
+      'error',
+      {
+        atComponent: 'longform',
+        default: 'longform',
+        named: 'longform',
+      },
+    ],
     'vue/component-definition-name-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'import/no-extraneous-dependencies': 'off',
@@ -48,5 +51,6 @@ module.exports = {
     'prefer-destructuring': 'off',
     'linebreak-style': ['error', 'unix'],
     camelcase: 'warn',
+    'prettier/prettier': 'error',
   },
 };

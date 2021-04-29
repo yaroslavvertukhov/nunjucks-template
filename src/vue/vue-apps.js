@@ -4,5 +4,7 @@ import App from '@/app';
 
 new Vue({
   store,
-  render(h) { return h(App); },
+  render(h) {
+    return h(App);
+  },
 }).$mount('#vue-test');
