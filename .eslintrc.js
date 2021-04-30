@@ -60,5 +60,13 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     camelcase: 'warn',
     'prettier/prettier': 'error',
+    'no-plusplus': ['off'],
+    'no-param-reassign': [
+      'error',
+      {
+        props: false,
+      },
+    ],
+    'func-names': ['off'],
   },
 };
