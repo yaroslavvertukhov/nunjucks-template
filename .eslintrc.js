@@ -52,6 +52,7 @@ module.exports = {
     'vue/component-definition-name-casing': ['error', 'kebab-case'],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'vue/v-on-function-call': ['error'],
+    'vue/no-template-shadow': 'off',
     'no-var': 'error',
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
