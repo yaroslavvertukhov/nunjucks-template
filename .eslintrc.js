@@ -56,6 +56,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'prefer-destructuring': 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     camelcase: 'warn',
     'prettier/prettier': 'error',
   },
