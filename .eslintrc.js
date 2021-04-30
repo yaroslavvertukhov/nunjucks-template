@@ -7,7 +7,12 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['airbnb-base', 'plugin:vue/recommended', 'prettier'],
+  extends: [
+    'airbnb-base',
+    'plugin:vue/essential',
+    'plugin:vue/recommended',
+    'prettier',
+  ],
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 2019,
@@ -49,7 +54,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
     'prefer-destructuring': 'off',
-    'linebreak-style': ['error', 'unix'],
     camelcase: 'warn',
     'prettier/prettier': 'error',
   },
