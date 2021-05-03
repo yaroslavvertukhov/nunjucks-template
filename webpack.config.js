@@ -18,11 +18,11 @@ const PATHS = {
   dist: path.join(__dirname, 'dist'),
 };
 
-const pagesDir = `${PATHS.src}/pug/pages/`;
+const pagesDir = `${PATHS.src}/nunjucks/pages/`;
 
 const pages = fs
   .readdirSync(pagesDir)
-  .filter((fileName) => fileName.endsWith('.pug'));
+  .filter((fileName) => fileName.endsWith('.njk'));
 module.exports = {
   externals: {
     paths: PATHS,
@@ -55,6 +55,17 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.njk$/,
+        use: [
+          {
+            loader: 'simple-nunjucks-loader',
+            options: {
+              searchPaths: ['src/nunjucks'],
+            },
+          },
+        ],
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -138,7 +149,7 @@ module.exports = {
       (page) =>
         new HtmlWebpackPlugin({
           template: `${pagesDir}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
+          filename: `./${page.replace(/\.njk/, '.html')}`,
           minify: false,
           env: process.env,
         })
