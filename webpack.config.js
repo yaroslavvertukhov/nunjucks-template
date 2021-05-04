@@ -71,18 +71,6 @@ module.exports = {
         loader: 'vue-loader',
       },
       {
-        test: /\.pug$/,
-        oneOf: [
-          {
-            resourceQuery: /^\?vue/,
-            use: ['pug-plain-loader'],
-          },
-          {
-            use: ['pug-loader'],
-          },
-        ],
-      },
-      {
         test: /\.m?js$/,
         exclude: /(node_modules)/,
         use: {
