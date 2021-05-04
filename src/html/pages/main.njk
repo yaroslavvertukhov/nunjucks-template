@@ -1,0 +1,25 @@
+{% extends "layouts/_default.njk" %}
+
+{% set test = ['Элемент массива 1', 'Элемент массива 2', 'Элемент массива 3'] %}
+
+{% block content %}
+
+    <div class="container">
+        {% include 'blocks/_block.njk' %}
+
+        Тестовый контент
+
+        {% if true %}
+            <div>
+                тестовое условие
+            </div>
+        {% endif %}
+
+        {% for item in test %}
+            <div>{{ item }}</div>
+        {% endfor %}
+
+        <div id="vue-test"></div>
+    </div>
+
+{% endblock %}

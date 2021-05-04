@@ -1,0 +1,44 @@
+{% extends "layouts/_page-list.njk" %}
+
+{% set pages = [
+    {title: 'Главная', href: 'main.html', desktop: '-', mobile: '-'}
+] %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-list">
+            <div class="page-list-header">
+                <div class="page-list-link-title">
+                    Страница и ссылка
+                </div>
+                <div class="page-list-progress-title">
+                    Верстка десктопная
+                </div>
+                <div class="page-list-progress-title">
+                    Верстка мобильная
+                </div>
+            </div>
+            <div class="page-list-title">
+                <div class="page-list-body">
+                    {% for page in pages %}
+                        <div class="page-list-item">
+                            <div class="page-list-link-box">
+                                <a href="{{ page.href }}" class="page-list-link">
+                                    {{ page.title }}
+                                </a>
+                            </div>
+                            <div class="page-list-progress">
+                                <div class="page-list-progress-item">
+                                    {{ page.desktop }}
+                                </div>
+                                <div class="page-list-progress-item">
+                                    {{ page.mobile }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -18,7 +18,7 @@ const PATHS = {
   dist: path.join(__dirname, 'dist'),
 };
 
-const pagesDir = `${PATHS.src}/nunjucks/pages/`;
+const pagesDir = `${PATHS.src}/html/pages/`;
 
 const pages = fs
   .readdirSync(pagesDir)
@@ -61,7 +61,7 @@ module.exports = {
           {
             loader: 'simple-nunjucks-loader',
             options: {
-              searchPaths: ['src/nunjucks'],
+              searchPaths: ['src/html'],
             },
           },
         ],
@@ -180,6 +180,7 @@ module.exports = {
       { from: 'src/assets/documents', to: 'content' },
       { from: 'src/assets/img/content', to: 'content' },
       { from: 'src/assets/json', to: 'json' },
+      { from: 'src/assets/css', to: 'css' },
     ]),
     new VueLoaderPlugin(),
   ],
