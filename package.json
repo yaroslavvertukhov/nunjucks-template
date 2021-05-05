@@ -1,11 +1,12 @@
 {
-  "name": "pug-template",
+  "name": "layout-template",
   "version": "1.0.0",
   "description": "markup",
   "main": "app.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "lint": "eslint --ext .js,.vue --fix --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
