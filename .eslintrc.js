@@ -69,5 +69,6 @@ module.exports = {
       },
     ],
     'func-names': ['off'],
+    'no-new': ['off'],
   },
 };
