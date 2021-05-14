@@ -1,5 +1,13 @@
 {% extends "layouts/_default.njk" %}
 
+{% set breadCrumbs = [{
+    name: 'Главная',
+    link: '#'
+}, {
+    name: 'О компании',
+    link: '#'
+}] %}
+
 {% set test = ['Элемент массива 1', 'Элемент массива 2', 'Элемент массива 3'] %}
 
 {% block content %}

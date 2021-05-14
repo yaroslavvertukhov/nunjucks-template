@@ -1,3 +1,4 @@
+{% from 'mixins/bread-crumbs.njk' import breadCrumbsMixin with context %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -10,6 +11,7 @@
 <body>
     <div class="wrapper">
         {% include 'includes/header.njk' %}
+        {{ breadCrumbsMixin(breadCrumbs) }}
         <div class="page">
             {% block content %}{% endblock %}
         </div>

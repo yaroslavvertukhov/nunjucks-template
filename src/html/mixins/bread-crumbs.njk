@@ -1,0 +1,20 @@
+{% macro breadCrumbsMixin(items) %}
+    {% if items %}
+        <div class="container">
+            <div class="bread-crumbs">
+                {% for item in items %}
+                    {% if loop.index < loop.length %}
+                        <span class="bread-crumbs__item">
+                        <a href="">{{ item.name }}</a>
+                        <svg class="bread-crumbs__seporator" width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.417894 0.127871L0.138678 0.389922C0.0514795 0.472394 0.00344091 0.582119 0.00344092 0.699388C0.00344092 0.816592 0.0514795 0.926447 0.138678 1.00892L3.30193 3.99821L0.135169 6.99095C0.0479697 7.07329 -3.57057e-08 7.18315 -3.05826e-08 7.30035C-2.54594e-08 7.41756 0.0479698 7.52748 0.135169 7.60988L0.412663 7.872C0.593118 8.04267 0.887061 8.04267 1.06752 7.872L4.85148 4.30878C4.93861 4.22644 5 4.11672 5 3.99847L5 3.99711C5 3.87984 4.93854 3.77011 4.85148 3.68777L1.07777 0.127871C0.99064 0.0453991 0.871025 0.000130106 0.747006 -6.02547e-08C0.622918 -5.02455e-08 0.504955 0.0453991 0.417894 0.127871Z" fill="#030235" fill-opacity="0.4"/>
+                        </svg>
+                    </span>
+                    {% else %}
+                        <span class="bread-crumbs__item">{{ item.name }}</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
