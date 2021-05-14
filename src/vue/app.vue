@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import api from '@/helpers/api';
 import testComponent from './components/test-component';
 
 export default {
@@ -11,14 +10,13 @@ export default {
   components: {
     testComponent,
   },
-  mixins: [api],
   data() {
     return {
       users: [],
     };
   },
   created() {
-    this.testAPI().then((response) => {
+    this.$api.getUsers().then((response) => {
       const users = response.data;
       this.users = users;
     });
