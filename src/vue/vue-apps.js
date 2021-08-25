@@ -1,13 +1,3 @@
-import Vue from 'vue';
-import store from '@/store';
-import App from '@/app';
-import api from './plugins/api';
+const requireComponent = require.context('./', true, /main.js$/);
 
-Vue.use(api);
-
-new Vue({
-  store,
-  render(h) {
-    return h(App);
-  },
-}).$mount('#vue-test');
+requireComponent.keys().forEach(requireComponent);
