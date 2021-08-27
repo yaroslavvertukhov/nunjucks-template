@@ -24,6 +24,12 @@ const pages = fs
   .readdirSync(pagesDir)
   .filter((fileName) => fileName.endsWith('.njk'));
 module.exports = {
+  stats: {
+    children: false,
+  },
+  performance: {
+    hints: false,
+  },
   externals: {
     paths: PATHS,
   },
