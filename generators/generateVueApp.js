@@ -2,6 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
+const toCamel = (s) =>
+  s.replace(/([-_][a-z])/gi, ($1) =>
+    $1.toUpperCase().replace('-', '').replace('_', '')
+  );
+
 const error = (...args) => {
   console.error(chalk.red(...args));
 };
@@ -46,10 +51,10 @@ import api from './plugins/api';
 
 Vue.use(api);
 
-const ${appName} = document.querySelector('#${appName}');
-if (${appName})
+const ${toCamel(appName)} = document.querySelector('#${appName}');
+if (${toCamel(appName)})
   new Vue({
-    el: ${appName},
+    el: ${toCamel(appName)},
     render(h) {
       return h(App);
     },
@@ -124,22 +129,6 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.users {
-  margin: 20px 0;
-  &__title {
-    font-size: 20px;
-  }
-}
-.blocks {
-  display: flex;
-  flex-wrap: wrap;
-  &__item {
-    width: 30%;
-  }
-}
-</style>
 `;
 
 const mainPath = `${path.join(appPath, `main.js`)}`;
