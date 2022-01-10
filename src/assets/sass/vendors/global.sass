@@ -1,0 +1,23 @@
+@import "../variables/variables"
+@import "../mixins/fluid-mixin"
+@import "../mixins/mq"
+
+html
+    overflow-x: hidden
+
+html,
+body
+    font-family: $fontFamily
+    color: $colorText
+    min-height: 100% !important
+    line-height: 1.6
+    //overflow-x: hidden // bcs position:sticky don`t work
+    min-width: 320px
+    position: relative
+    &.lock-popup
+        overflow: hidden
+
+a
+    text-decoration: none
+    transition: color
+    outline: none
