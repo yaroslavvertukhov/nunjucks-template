@@ -8,5 +8,3 @@ import './assets/sass/index.sass';
 
 // // vue
 // import './vue/vue-apps';
-
-
